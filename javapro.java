@@ -1,5 +1,13 @@
 package basicjavapro;
 
+
+
+
+
+
+
+
+
 class Sample {
 	short a = 2019;   short b = 2020;   int m; protected int g=100;  protected int h=200;   double d;  
 	float f;   boolean y=true;   boolean z=false; private  int r; private String n;
