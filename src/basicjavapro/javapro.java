@@ -1,11 +1,10 @@
 package basicjavapro;
-
 class Sample {
 // INSTANCE VARIABLE
 	  protected int g=100;  protected int h=200;    
    boolean y=true;   boolean z=false; private  int r; private String n;
 	char[] ch= {'P','E','R','F','I','C','I','E','N','T'};
-	String s=String.copyValueOf(ch);
+	String s= new String(ch);
 	//STATIC KEYWORD
 	static String company = "PERFICIENT"; 
 	byte c=10;byte d=20;
@@ -18,7 +17,6 @@ class Sample {
 	System.out.println("BITWISE OPERATOR : "+boo+" TERNARY OPERATOR = "+ter);
 	System.out.println("ASSIGNMENT OPERATOR : a = "+(c/=10)+" b = "+(d*=5)+" c = "+(c%=2));
 	}
-	 
 	//DEFAULT CONSTRUCTOR
 	  Sample(){
 		  System.out.println("Default Constructor");
@@ -94,9 +92,10 @@ class Sample {
 	}
 	   }
 	 class javaprog extends  Sample{
-	    public void finalize() {
-	       System.out.println("Finalize method");
-	    }   void meth(int a, int b) {
+	  //  public void finalize() {
+	       //System.out.println("Finalize method");
+	    //} 
+	    void meth(int a, int b) {
 	       System.out.println("METHOD OVERRIDING : " + a + b);
 	   }   void fun(Sample obj1) {
 	       obj1.g =obj1.g-50;
@@ -112,11 +111,57 @@ class Sample {
 	    	if(n==1)
 	       return  1 ;
 	    	else
-	    		  return fact(n - 1) * n;
-	    	
-	    }
-	   
-	    public static void main(String[] args) {
+	    		  return fact(n - 1) * n;}
+	 char[] ch= {'P','E','R','F','O','R','M','A','N','C','E'};
+	 String s=new String(ch);
+	 char c=s.charAt(4);
+	 String str ="Java is the high LEVEL Programming LAnguagE"; 
+	 String str1="programmming";
+	 String st=new String("PERFECT");
+	 String st1=new String ("PERFECT");
+	 String st2=new String ("perfect");
+	 String s1=new String("BETTER");
+	 String s2=new String("SINCERE");
+	 char a='A'; char b='B';
+	 String s3=("");
+	 //CONCAT
+	 { System.out.println("concat : "+st.concat(" ").concat(s1).concat(" ").concat(s2));
+	 // comapreTo
+	 System.out.println(" string : "+s+"  charAt : "+c+"  compareTo : "+s.compareTo(st)+"  compareTo : "+s.compareTo(s1)+
+	 		"  compareTo : "+s.compareTo(s2));
+	 //CONTAINS
+	 System.out.println("contains : "+str.contains("high level")+" contains : "+ str.contains("machine language"));
+	 //ENDSWITH
+	 System.out.println("endswith : "+str.endsWith("E")+" endswith : "+str.endsWith("d"));
+	 //EQUALS
+	 System.out.println("equals : "+st.equals(st1)+" equals : "+st.equals(s1));
+	 //EQUALSIGNORECASE
+	 System.out.println("equalsIgnorecase : "+st.equalsIgnoreCase(st1)+" equalsIgnorecase : "+st.equalsIgnoreCase(st2));
+	 //INDEXOF
+	 System.out.println("indexOf : "+str.indexOf("the")+" indexOf : "+st.indexOf('P'));
+	 //lastIndexOf
+	 System.out.println("lastIndexOf : "+str.lastIndexOf('s'));
+	 //isEmpty
+	 System.out.println("isEmpty : "+s3.isEmpty()+" isEmpty : "+s2.isEmpty());
+	 //join
+	 String s4=String.join("-","hai","hello");  
+	 System.out.println("join : "+s4); 
+	 //LENGTH
+	 System.out.println("length : "+st1.length());
+	 //REPLACE AND REPLACE ALL
+	 System.out.println("replace : "+s1.replace('E','U')+"  replaceAll : "+str.replaceAll("the","a"));
+	 //startWith
+	 System.out.println("startWith : "+s2.startsWith("S")+" startWith : "+s2.startsWith("I"));
+	 //subString
+	 System.out.println("subString : "+str.substring(23,34));
+	 //toLowerCase and toUpperCase
+	 System.out.println("toLowerCase : "+str.toLowerCase()+"\n toUpperCase : "+str.toUpperCase()); 
+	 //TRIM
+	 System.out.println("trim : "+str1.trim()+"language");
+	 //valueOf
+	 System.out.println("valueOf : "+String.valueOf(a)+" ; valueOf : "+String.valueOf(b));}
+	 
+	public static void main(String[] args) {
 	     Sample obj = new Sample();
 	     obj.data();
 	       Sample obj2 = new Sample(2, "vijay");
@@ -132,9 +177,8 @@ class Sample {
 	     System.out.println("after changing the value : " + obj1.g);
 	       System.out.println("Factorial of 5 : " + fact(5));
 	     display1();
-	      display1("hello,hai");
 	       display1("hai,hello,welcome");
-	       javapro displayy=new javapro();
+	      javapro displayy=new javapro();
 	       System.gc();
 	}
 
