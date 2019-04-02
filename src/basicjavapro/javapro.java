@@ -1,4 +1,6 @@
 package basicjavapro;
+
+import java.io.*;
 class Sample {
 // INSTANCE VARIABLE
 	  protected int g=100;  protected int h=200;    
@@ -159,7 +161,12 @@ class Sample {
 	 //TRIM
 	 System.out.println("trim : "+str1.trim()+"language");
 	 //valueOf
-	 System.out.println("valueOf : "+String.valueOf(a)+" ; valueOf : "+String.valueOf(b));}
+	 System.out.println("valueOf : "+String.valueOf(a)+" ; valueOf : "+String.valueOf(b));
+		StringBuffer buffer=new StringBuffer("Java is Object Oriented Oriented");
+		//buffer.replace(," an ");
+		System.out.println("STRINGBUFFER : \n append : "+buffer.append(" and it is a programming language ")+"\n  insert : "+buffer.insert(7, " the ")+
+		"\n replace : "+buffer.replace(8,11,"an ")+"\n delete : "+buffer.delete(28,37)+"\n reverse : "+buffer.reverse()+"\n capacity : "+buffer.capacity());}
+	 
 	 
 	public static void main(String[] args) {
 	     Sample obj = new Sample();
@@ -179,7 +186,46 @@ class Sample {
 	     display1();
 	       display1("hai,hello,welcome");
 	      javapro displayy=new javapro();
-	       System.gc();
-	}
-
+	      honey bee=new honey();
+	      bee.girls();
+	      bee.boys();
+	      bee.show();
+	      bee.abs();
+	      bee.abst();
+	      javapro b=new javapro();
+	  		b.pani();
 }
+	      //bee.show(20);
+	
+	          		
+	  void alpha()throws IOException {
+	  		throw new IOException();}
+	  	//	System.out.println("alpha class");}
+	  	void pani() {
+	  		try {
+	  			try { alpha();
+	  			}
+	  		catch(Exception e) {
+	  			System.out.println(e);
+	  		}try {
+	  			int c=2/0;
+	  		}catch(ArithmeticException e)
+	  		{System.out.println(e);}}
+	  		catch(Exception e )
+	  		{System.out.println(e);}}
+	
+	  		} /*		try {
+	  			String st=null;
+	  			st.length();
+	  			try {
+	  				int c=5/0;
+	  			}
+	  		catch(ArithmeticException e) {
+	  			System.out.println(e);
+	  		}}
+	  		catch(NullPointerException e) {
+	  			System.out.println(e);}
+	  		
+	finally {
+		System.out.println("FINALLY - It is always executed ");
+	}*/
