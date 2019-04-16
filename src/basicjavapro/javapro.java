@@ -1,6 +1,9 @@
 package basicjavapro;
-
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import basicjavapro.bad.honey;
 class Sample {
 // INSTANCE VARIABLE
 	  protected int g=100;  protected int h=200;    
@@ -166,9 +169,55 @@ class Sample {
 		//buffer.replace(," an ");
 		System.out.println("STRINGBUFFER : \n append : "+buffer.append(" and it is a programming language ")+"\n  insert : "+buffer.insert(7, " the ")+
 		"\n replace : "+buffer.replace(8,11,"an ")+"\n delete : "+buffer.delete(28,37)+"\n reverse : "+buffer.reverse()+"\n capacity : "+buffer.capacity());}
-	 
-	 
-	public static void main(String[] args) {
+	 public enum cmpy{CTS , TCS , WIPRO , PERFICIENT , INFOSYS}
+	{System.out.println("values()....");
+			for(cmpy com:cmpy.values()){
+			System.out.println(com);}
+			cmpy com=cmpy.valueOf("PERFICIENT"); 	
+			System.out.println("valueOf()....");
+			System.out.println(com);
+			
+			System.out.println("switch statement...");
+			cmpy comp=cmpy.PERFICIENT;
+			switch(comp) {
+			case CTS:
+				System.out.println("cts");
+				break;
+			case TCS:
+				System.out.println("tcs");
+				break;
+			case PERFICIENT:
+				System.out.println("perficient");
+				break;
+		default:
+				System.out.println("no one is correct");
+			}
+	int a=5;
+	Integer j=new Integer(a);
+	System.out.println("AUTOBOXING " +j);
+	Integer i=new Integer(10);
+	int b=i;
+	System.out.println("AUTO BOXING : "+b);
+	ArrayList<String> arr=new ArrayList<String>();
+	arr.add("chandra");
+	arr.add("santhi");
+	arr.add("sanjay");
+	arr.add("lekha");
+	Iterator<String> it=arr.iterator();
+	System.out.println("ARRAY LIST : ");
+	while(it.hasNext()) {
+		System.out.println(it.next());
+}
+arr.remove("lekha");
+arr.remove(1);
+for(String s:arr) {
+System.out.println(s);	
+}arr.set(0,"malar");
+for(String s:arr) {
+System.out.println(s);	
+}arr.removeAll(arr);
+System.out.println(" "+arr);}
+public static void main(String[] args) {
 	     Sample obj = new Sample();
 	     obj.data();
 	       Sample obj2 = new Sample(2, "vijay");
@@ -193,11 +242,7 @@ class Sample {
 	      bee.abs();
 	      bee.abst();
 	      javapro b=new javapro();
-	  		b.pani();
-}
-	      //bee.show(20);
-	
-	          		
+	  		b.pani();}
 	  void alpha()throws IOException {
 	  		throw new IOException();}
 	  	//	System.out.println("alpha class");}
@@ -212,20 +257,4 @@ class Sample {
 	  		}catch(ArithmeticException e)
 	  		{System.out.println(e);}}
 	  		catch(Exception e )
-	  		{System.out.println(e);}}
-	
-	  		} /*		try {
-	  			String st=null;
-	  			st.length();
-	  			try {
-	  				int c=5/0;
-	  			}
-	  		catch(ArithmeticException e) {
-	  			System.out.println(e);
-	  		}}
-	  		catch(NullPointerException e) {
-	  			System.out.println(e);}
-	  		
-	finally {
-		System.out.println("FINALLY - It is always executed ");
-	}*/
+	  		{System.out.println(e);}}}
