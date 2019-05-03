@@ -1,9 +1,9 @@
 package basicjavapro;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.*;
 
-import basicjavapro.bad.honey;
+
+
 class Sample {
 // INSTANCE VARIABLE
 	  protected int g=100;  protected int h=200;    
@@ -217,7 +217,14 @@ for(String s:arr) {
 System.out.println(s);	
 }arr.removeAll(arr);
 System.out.println(" "+arr);}
-public static void main(String[] args) {
+
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) throws IOException  {
 	     Sample obj = new Sample();
 	     obj.data();
 	       Sample obj2 = new Sample(2, "vijay");
@@ -235,18 +242,14 @@ public static void main(String[] args) {
 	     display1();
 	       display1("hai,hello,welcome");
 	      javapro displayy=new javapro();
-	      honey bee=new honey();
-	      bee.girls();
-	      bee.boys();
-	      bee.show();
-	      bee.abs();
-	      bee.abst();
+	     
+	      
 	      javapro b=new javapro();
 	  		b.pani();}
 	  void alpha()throws IOException {
 	  		throw new IOException();}
 	  	//	System.out.println("alpha class");}
-	  	void pani() {
+	  	void pani() throws IOException {
 	  		try {
 	  			try { alpha();
 	  			}
@@ -257,4 +260,110 @@ public static void main(String[] args) {
 	  		}catch(ArithmeticException e)
 	  		{System.out.println(e);}}
 	  		catch(Exception e )
-	  		{System.out.println(e);}}}
+	  		{System.out.println(e);}
+	  //creating the new file
+	  		File f=new File("f://IOSTREAM//newfile.txt");
+	  		boolean b11=false;
+	  		try {
+	  			b11=f.createNewFile();
+	  		} catch (IOException e) {
+	  			// TODO Auto-generated catch block
+	  		e.printStackTrace();
+	  		}
+	  	System.out.println(b);
+	  	System.out.println("lastModified "+f.lastModified());
+	  		System.out.println("length of the file : "+f.length());
+	  	// read the file char by char using filereader.
+	  		try {
+	  			FileWriter fw= new FileWriter("f://IOSTREAM//newfile.txt");
+	  			fw.write("Java is one of the progamming language");
+	  			//fw.write("\n");
+	  			fw.write("\n Java is the object oriented.");
+	  			fw.flush();
+	  			fw.close();
+	  			} catch (IOException e1) {
+	  			// TODO Auto-generated catch block
+	  			System.out.println(e1);//e.printStackTrace();
+	  		}
+	  			try {
+	  			FileReader fr= new FileReader(f);
+	  			long lm=0;
+	  			long len=f.length();
+	  			while(lm<len) {
+	  				char c=(char) fr.read();
+	  				System.out.print(c);
+	  				lm++;
+	  				
+	  			}
+	  		}catch(IOException e2) {
+	  			System.out.println(e2);}
+	  			//FILTER DATA OUTPUT AND INPUT STREAM
+	  			FileOutputStream file=new FileOutputStream("F:\\IOSTREAM\\dataoutputstream.txt");
+	  			DataOutputStream dos=new DataOutputStream(file);
+	  			dos.writeInt(34);
+	  			dos.flush();
+	  			dos.close();
+	  		int size=dos.size();
+	  	System.out.print("\n");
+	  		System.out.println("Size = "+size);
+	  		FileOutputStream fileos=new FileOutputStream("F:\\IOSTREAM\\bufferedoutputstream.txt");   
+	  		BufferedOutputStream bout=new BufferedOutputStream(fileos);    
+	  		     String stt="GOOD DAY";
+	  		     byte b1[]=stt.getBytes();
+	  		     bout.write(b1);
+	  		     bout.flush();
+	  		     bout.close();
+	  				FileInputStream fileis=new FileInputStream("F:\\IOSTREAM\\bufferedoutputstream.txt");   
+	  				BufferedInputStream bin=new BufferedInputStream(fileis);   
+	  			
+	  				int r;
+	  				while((r=bin.read())!=-1){    
+	  				     System.out.println((char)r);    
+	  				    				}
+	  				
+
+	  			
+	  		FileInputStream fille=new FileInputStream("F:\\IOSTREAM\\datainputstream.txt");
+	  		DataInputStream dis=new DataInputStream(fille);
+	  		int count=fille.available();
+	  		byte[] arr= new byte[count];
+	  		dis.read(arr);
+	  		for(byte d:arr) {
+	  			char l=(char)d;
+	  			System.out.print(d +" = "+l);}
+	  		//BYTE ARRAY OUTPUT AND INPUT STREAM
+	  		FileOutputStream fout=new FileOutputStream("F:\\IOSTREAM\\BytearrayOStream1.txt");
+	  		FileOutputStream fout1=new FileOutputStream("F:\\IOSTREAM\\BytearrayOStream2.txt");
+	  		ByteArrayOutputStream baos=new ByteArrayOutputStream();
+	  		baos.write(66);
+	  		baos.writeTo(fout);
+	  		baos.writeTo(fout1);
+	  		baos.flush();
+	  		baos.close();
+	  		
+	  		HashMap <Integer,String> hm=new HashMap<Integer,String>();
+	    	hm.put(1,"vijay");
+	    	hm.put(2,"madhu");
+	    	hm.put(3,"surya");
+	    	hm.put(4,"sasi");
+	    	for(Map.Entry mp:hm.entrySet()){
+	    		System.out.println(mp.getKey()+" "+mp.getValue());}
+	    	// REPLACING SURYA
+	    	System.out.println("REPLACING SURYA REMOVING 1ST POSITION");
+	    	hm.replace(3, "surya","divya");
+	    	//	REMOVE 1 POSITION
+	    	    	hm.remove(1,"vijay");
+	    	//COMPUTE IFPRESENT AND  IFABSENT	
+	    hm.computeIfPresent(2,(key,value)->"mad");
+	    		hm.computeIfAbsent(5,key->"prema");
+	    		hm.compute(4,(key,value)->("lakshmi"));
+	    		//hm.clear();
+	    		
+	    		for(Map.Entry mp:hm.entrySet()){
+	        		System.out.println(mp.getKey()+" "+mp.getValue());
+	    	}
+	    			
+	  		
+	  		
+	  	
+	  		}}
